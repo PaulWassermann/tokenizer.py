@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "tokenizer"
+version = "0.0.1"
+description = "A package built following Andrej Karpathy's video 'Let's build the GPT tokenizer. Provides basic functionnalities for building tokenizers."
+license = "MIT"
+authors = [
+    "Paul Wassermann <paul9499@gmail.com>"
+]
+readme = "README.md"
+repository = "TODO"
+documentation = "TODO"
+
+[tool.poetry.dependencies]
+python = "^3.11.9"
+
+[tool.poetry.group.test.dependencies]
+
+
+[tool.poetry.group.docs.dependencies]
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.mansory.api"
