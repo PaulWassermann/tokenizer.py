@@ -7,8 +7,8 @@ authors = [
     "Paul Wassermann <paul9499@gmail.com>"
 ]
 readme = "README.md"
-repository = "TODO"
-documentation = "TODO"
+repository = "https://github.com/PaulWassermann/tokenizer.py"
+# documentation = "TODO"
 
 [tool.poetry.dependencies]
 python = "^3.11.9"
@@ -18,6 +18,10 @@ python = "^3.11.9"
 
 [tool.poetry.group.docs.dependencies]
 
+
+[tool.poetry.group.notebooks.dependencies]
+regex = "^2024.5.15"
+tiktoken = "^0.7.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
