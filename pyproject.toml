@@ -19,9 +19,11 @@ python = "^3.11.9"
 [tool.poetry.group.docs.dependencies]
 
 
+[tool.poetry.group.scripts.dependencies]
+
+
 [tool.poetry.group.notebooks.dependencies]
 regex = "^2024.5.15"
-tiktoken = "^0.7.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
