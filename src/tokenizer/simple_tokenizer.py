@@ -5,9 +5,7 @@ class SimpleTokenizer(Tokenizer):
     """
     The `SimpleTokenizer` class implements the interface defined in :class:`Tokenizer`.
 
-    The :method:`train` method implements a simple Byte Pair Encoding (BPE) algorithm,
-    with no consideration whatsoever for wasteful / useless merges. This tokenizer does
-    not support special token handling.
+    The :method:`train` method implements a simple Byte Pair Encoding (BPE) algorithm, with no consideration whatsoever for wasteful / useless merges. This tokenizer does not support special token handling.
 
     Attributes
     ----------
@@ -19,14 +17,15 @@ class SimpleTokenizer(Tokenizer):
     merges: dict ((int, int) -> str)  
         A mapping from pairs of token ids to the 'merged' token ids.
     """
-    def __init__(self):
-        super().__init__()
+    def decode(self, token_ids: list[int]) -> str:
+        return sum(
+            self.vocab[token_id] for token_id in token_ids
+            ).decode("utf-8")
 
-    def decode(self):
-        ...
+    def encode(self, text: str) -> list[int]:
+        text_bytes = text.encode("utf-8")
 
-    def encode(self):
-        ...
+        for 
 
     def train(self):
         ...
