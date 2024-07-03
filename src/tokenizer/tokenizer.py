@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from os import PathLike
-from typing import Self
+from typing import Generator, Self, Sequence
 
 
 class Tokenizer(ABC):
@@ -47,16 +47,17 @@ class Tokenizer(ABC):
         ...
 
     def _merge(
-            self, token_ids: list[int], id_pair: tuple[int, int], new_id: int
-            ) -> list[int]:
-        new_token_ids = []
-        for current_pair in zip(token_ids, token_ids[1:]):
-            if current_pair == id_pair:
-                new_token_ids.append(new_id)
+            self, token_ids: Sequence[int], id_pair: tuple[int, int], new_id: int
+            ) -> Generator[int, None, None]:
+        index = 0
+        while index < len(token_ids) - 1:
+            if (token_ids[index], token_ids[index + 1]) == id_pair:
+                yield new_id
             else:
-                new_token_ids.append(current_pair[0])
+                yield token_ids[index]
         
-        return new_token_ids
+        if index == len(token_ids) - 1:
+            yield token_ids[index]
 
     @abstractmethod
     def save(self, path: str | PathLike) -> None:

@@ -18,14 +18,15 @@ class SimpleTokenizer(Tokenizer):
         A mapping from pairs of token ids to the 'merged' token ids.
     """
     def decode(self, token_ids: list[int]) -> str:
-        return sum(
+        return b"".join(
             self.vocab[token_id] for token_id in token_ids
             ).decode("utf-8")
 
     def encode(self, text: str) -> list[int]:
-        text_bytes = text.encode("utf-8")
+        token_ids = text.encode("utf-8")
 
-        for 
+        for token_pair, pair_id in self.merges:
+            token_ids = list(self._merge(token_ids, token_pair, pair_id))
 
     def train(self):
         ...
