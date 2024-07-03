@@ -56,3 +56,6 @@ docs/_build/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# ruff
+.ruff_cache
