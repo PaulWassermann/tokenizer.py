@@ -23,6 +23,7 @@ python = "^3.11.9"
 
 
 [tool.poetry.group.notebooks.dependencies]
+ipykernel = "^6.29.5"
 regex = "^2024.5.15"
 
 [build-system]
