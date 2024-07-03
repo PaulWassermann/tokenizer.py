@@ -1,0 +1,32 @@
+fix = true
+line-length = 80
+indent-width = 4
+required-version = ">=0.5.0"
+src = [
+    "notebooks",
+    "scripts",
+    "src",
+    "tests"
+]
+target-version = "py311"
+
+[lint]
+select = [
+    "ANN",  # flake8-annotations errors
+    "D",    # pydocstyle errors
+    "E",    # pycodestyle errors
+    "F",    # Pyflakes errors
+    "I",    # isort errors
+    "N",    # pep8-naming errors
+    "W"     # pycodestyle warnings
+]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+
+[lint.pydocstyle]
+convention = "numpy"
